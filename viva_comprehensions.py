@@ -18,7 +18,10 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     :param parity:
     :return:
     """
-    pass
+    if parity == Parity.ODD:
+        return [x for x in range(start, stop) if x % 2 != 0]
+    else:    
+        return [x for x in range(start, stop) if x % 2 == 0]
 
 
 def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
@@ -47,4 +50,6 @@ def gen_set(val_in: str) -> Set:
     :param val_in:
     :return:
     """
-    pass
+
+    return {x.upper() for x in val_in if x.islower()}
+    
