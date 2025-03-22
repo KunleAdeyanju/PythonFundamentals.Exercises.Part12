@@ -33,7 +33,9 @@ def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     :param strategy:
     :return:
     """
-    pass
+    
+    return {x : strategy(x) for x in range(start,stop) if start < stop }
+
 
 
 def gen_set(val_in: str) -> Set:
